@@ -12,9 +12,9 @@
 
 # Modify default IP
 #sed -i 's/192.168.1.1/192.168.50.5/g' package/base-files/files/bin/config_generate
-rm -rf package/lean/luci-theme-argon
-git clone -b 18.06 https://github.com/jerrykuku/luci-theme-argon.git package/lean/luci-theme-argon
-git clone https://github.com/kiddin9/openwrt-bypass.git package/lean/openwrt-bypass
-sed -i 's/192.168.1.1/192.168.10.1/g' package/base-files/files/bin/config_generate
+rm -rf feeds/luci/themes/luci-theme-argon
+git clone -b 18.06 https://github.com/jerrykuku/luci-theme-argon.git feeds/luci/themes/luci-theme-argon
+git clone https://github.com/kiddin9/openwrt-bypass.git feeds/luci/applications/openwrt-bypass
 sed -i 's/Bootstrap/Argon/g' feeds/luci/collections/luci/Makefile
 sed -i 's/luci-theme-bootstrap/luci-theme-argon/g' feeds/luci/collections/luci/Makefile
+sed -i 's/192.168.1.1/192.168.10.1/g' package/base-files/files/bin/config_generate
